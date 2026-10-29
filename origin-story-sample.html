@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>샘플상점 산지 이야기 샘플</title>
+  <style>
+    :root {
+      --pb-cream: #fbf7ef;
+      --pb-paper: #fffdf8;
+      --pb-green: #244a38;
+      --pb-leaf: #6d8a55;
+      --pb-coral: #d87958;
+      --pb-red: #a63f34;
+      --pb-ink: #27322b;
+      --pb-muted: #736b61;
+      --pb-line: rgba(36, 74, 56, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #f4eee5;
+      color: var(--pb-ink);
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", Arial, sans-serif;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .pb-origin {
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(251, 247, 239, 0.96), rgba(255, 253, 248, 1) 48%, rgba(246, 238, 226, 1));
+    }
+
+    .pb-home-link {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 20;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.42);
+      border-radius: 999px;
+      background: rgba(36, 74, 56, 0.82);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 16px 34px rgba(20, 42, 32, 0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .pb-home-link:hover {
+      background: rgba(216, 121, 88, 0.95);
+      color: #fff;
+    }
+
+    .pb-origin-hero {
+      position: relative;
+      min-height: 620px;
+      isolation: isolate;
+      color: #fff;
+    }
+
+    .pb-origin-hero::after {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      background:
+        linear-gradient(90deg, rgba(20, 42, 32, 0.82) 0%, rgba(20, 42, 32, 0.54) 38%, rgba(20, 42, 32, 0.08) 76%),
+        linear-gradient(0deg, rgba(20, 42, 32, 0.28), rgba(20, 42, 32, 0.02));
+    }
+
+    .pb-origin-hero img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .pb-origin-hero-copy {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 118px 0 92px;
+    }
+
+    .pb-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #f3d5bd;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+    }
+
+    .pb-kicker::before {
+      width: 34px;
+      height: 1px;
+      content: "";
+      background: currentColor;
+    }
+
+    .pb-origin h1,
+    .pb-origin h2,
+    .pb-origin h3 {
+      margin: 0;
+      font-family: "Noto Serif KR", "Nanum Myeongjo", Batang, Georgia, serif;
+      font-weight: 500;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+
+    .pb-origin-hero h1 {
+      max-width: 610px;
+      font-size: clamp(42px, 5.2vw, 72px);
+      line-height: 1.16;
+    }
+
+    .pb-origin-hero p {
+      max-width: 540px;
+      margin: 26px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 18px;
+      line-height: 1.86;
+      word-break: keep-all;
+    }
+
+    .pb-hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: min(760px, 100%);
+      margin-top: 54px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .pb-hero-facts div {
+      min-height: 108px;
+      padding: 24px 22px;
+      background: rgba(25, 49, 37, 0.42);
+    }
+
+    .pb-hero-facts strong {
+      display: block;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .pb-hero-facts span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .pb-origin-wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .pb-origin-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(360px, 1.12fr);
+      gap: 70px;
+      align-items: center;
+      padding: 104px 0 80px;
+    }
+
+    .pb-origin-intro h2 {
+      color: var(--pb-green);
+      font-size: clamp(34px, 3.4vw, 52px);
+      line-height: 1.28;
+    }
+
+    .pb-origin-intro p {
+      margin: 24px 0 0;
+      color: var(--pb-muted);
+      font-size: 17px;
+      line-height: 1.86;
+      word-break: keep-all;
+    }
+
+    .pb-origin-note {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-left: 3px solid var(--pb-coral);
+      background: rgba(216, 121, 88, 0.08);
+      color: #695f55;
+      font-size: 14px;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+
+    .pb-origin-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      gap: 12px;
+    }
+
+    .pb-origin-photo-grid figure {
+      position: relative;
+      min-height: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(36, 74, 56, 0.1);
+      background: #e7ddce;
+    }
+
+    .pb-origin-photo-grid figure:first-child {
+      grid-row: span 2;
+    }
+
+    .pb-origin-photo-grid img {
+      height: 100%;
+      min-height: 210px;
+      object-fit: cover;
+      transition: transform 0.55s ease;
+    }
+
+    .pb-origin-photo-grid figure:hover img {
+      transform: scale(1.025);
+    }
+
+    .pb-origin-photo-grid figcaption {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      padding: 8px 12px;
+      background: rgba(255, 253, 248, 0.9);
+      color: var(--pb-green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .pb-process {
+      padding: 82px 0 96px;
+      border-top: 1px solid var(--pb-line);
+      border-bottom: 1px solid var(--pb-line);
+    }
+
+    .pb-section-head {
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+      gap: 42px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .pb-section-head h2 {
+      color: var(--pb-green);
+      font-size: clamp(32px, 3.2vw, 48px);
+      line-height: 1.25;
+    }
+
+    .pb-section-head p {
+      margin: 0;
+      color: var(--pb-muted);
+      font-size: 15px;
+      line-height: 1.76;
+      word-break: keep-all;
+    }
+
+    .pb-process-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      counter-reset: process;
+    }
+
+    .pb-process-card {
+      position: relative;
+      min-height: 244px;
+      padding: 30px 24px 28px;
+      border: 1px solid var(--pb-line);
+      border-radius: 8px;
+      background: var(--pb-paper);
+      counter-increment: process;
+    }
+
+    .pb-process-card::before {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      margin-bottom: 26px;
+      border: 1px solid rgba(36, 74, 56, 0.22);
+      border-radius: 50%;
+      content: counter(process, decimal-leading-zero);
+      color: var(--pb-coral);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .pb-process-card h3 {
+      color: var(--pb-green);
+      font-size: 23px;
+      line-height: 1.32;
+    }
+
+    .pb-process-card p {
+      margin: 14px 0 0;
+      color: var(--pb-muted);
+      font-size: 14px;
+      line-height: 1.72;
+      word-break: keep-all;
+    }
+
+    .pb-product-proof {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.1fr);
+      gap: 52px;
+      align-items: center;
+      padding: 96px 0 106px;
+    }
+
+    .pb-proof-copy h2 {
+      color: var(--pb-green);
+      font-size: clamp(34px, 3.3vw, 50px);
+      line-height: 1.26;
+    }
+
+    .pb-proof-copy p {
+      margin: 22px 0 0;
+      color: var(--pb-muted);
+      font-size: 16px;
+      line-height: 1.84;
+      word-break: keep-all;
+    }
+
+    .pb-proof-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .pb-proof-list div {
+      display: grid;
+      grid-template-columns: 92px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid rgba(36, 74, 56, 0.13);
+    }
+
+    .pb-proof-list strong {
+      color: var(--pb-red);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .pb-proof-list span {
+      color: #554f48;
+      font-size: 15px;
+      line-height: 1.68;
+      word-break: keep-all;
+    }
+
+    .pb-proof-image {
+      overflow: hidden;
+      border: 1px solid rgba(36, 74, 56, 0.12);
+      background: #ede1d1;
+    }
+
+    .pb-proof-image img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .pb-closing {
+      padding: 76px 0 84px;
+      background: var(--pb-green);
+      color: #fff;
+      text-align: center;
+    }
+
+    .pb-closing-inner {
+      width: min(860px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .pb-closing h2 {
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: 1.32;
+    }
+
+    .pb-closing p {
+      margin: 20px auto 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 16px;
+      line-height: 1.82;
+      word-break: keep-all;
+    }
+
+    .pb-closing-home {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      margin-bottom: 26px;
+      padding: 0 24px;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--pb-green);
+      font-size: 15px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .pb-closing-home:hover {
+      background: #f3d5bd;
+      color: var(--pb-green);
+    }
+
+    @media (max-width: 900px) {
+      .pb-origin-hero {
+        min-height: 560px;
+      }
+
+      .pb-origin-hero-copy {
+        padding-top: 92px;
+      }
+
+      .pb-hero-facts,
+      .pb-origin-intro,
+      .pb-section-head,
+      .pb-product-proof {
+        grid-template-columns: 1fr;
+      }
+
+      .pb-origin-intro,
+      .pb-product-proof {
+        gap: 38px;
+      }
+
+      .pb-process-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .pb-origin-wrap,
+      .pb-origin-hero-copy,
+      .pb-closing-inner {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .pb-origin-hero {
+        min-height: 640px;
+      }
+
+      .pb-home-link {
+        top: 14px;
+        right: 14px;
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 13px;
+      }
+
+      .pb-origin-hero::after {
+        background:
+          linear-gradient(180deg, rgba(20, 42, 32, 0.84) 0%, rgba(20, 42, 32, 0.54) 54%, rgba(20, 42, 32, 0.18) 100%);
+      }
+
+      .pb-origin-hero img {
+        object-position: 68% center;
+      }
+
+      .pb-origin-hero h1 {
+        font-size: 40px;
+      }
+
+      .pb-origin-hero p,
+      .pb-origin-intro p,
+      .pb-proof-copy p {
+        font-size: 15px;
+      }
+
+      .pb-hero-facts {
+        display: block;
+      }
+
+      .pb-hero-facts div + div {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .pb-origin-intro {
+        padding: 72px 0 60px;
+      }
+
+      .pb-origin-photo-grid,
+      .pb-process-list {
+        grid-template-columns: 1fr;
+      }
+
+      .pb-origin-photo-grid figure:first-child {
+        grid-row: auto;
+      }
+
+      .pb-process {
+        padding: 64px 0 72px;
+      }
+
+      .pb-product-proof {
+        padding: 72px 0 78px;
+      }
+
+      .pb-proof-list div {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    Cafe24 upload note:
+    1. Upload files inside /origin-story-assets/ to Cafe24 file manager.
+    2. Replace local image paths below with Cafe24 CDN URLs, for example:
+       https://example.com/sample-asset
+  -->
+  <main class="pb-origin">
+    <a class="pb-home-link" href="/">홈으로 가기</a>
+
+    <section class="pb-origin-hero" aria-label="샘플상점 산지 이야기">
+      <img src="https://example.com/sample-asset" alt="햇살이 드는 과수원과 수확한 제철 과일" />
+      <div class="pb-origin-hero-copy">
+        <span class="pb-kicker">ORIGIN STORY</span>
+        <h1>좋은 과일은 산지에서부터 다르게 시작됩니다</h1>
+        <p>
+          샘플상점은 제철에 맛이 오른 산지의 과일을 고르고, 수확 후 상태를 한 번 더 확인해
+          신선함이 남아 있을 때 고객님께 보내는 일을 가장 중요하게 생각합니다.
+        </p>
+        <div class="pb-hero-facts" aria-label="산지 관리 핵심">
+          <div>
+            <strong>제철 산지</strong>
+            <span>품목마다 가장 맛이 오르는 산지를 중심으로 준비합니다.</span>
+          </div>
+          <div>
+            <strong>상태 선별</strong>
+            <span>무름, 흠, 크기 편차를 확인해 출고 전 한 번 더 걸러냅니다.</span>
+          </div>
+          <div>
+            <strong>산지 출고</strong>
+            <span>선별과 포장을 마친 과일을 신선한 흐름으로 보냅니다.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-origin-wrap pb-origin-intro">
+      <div>
+        <span class="pb-kicker">FROM FARM</span>
+        <h2>과수원의 시간에 맞춰 고르고, 고객님의 식탁까지 이어갑니다</h2>
+        <p>
+          과일은 같은 품종이어도 산지, 수확 시기, 보관과 이동 과정에 따라 맛과 상태가 달라집니다.
+          그래서 샘플상점은 산지의 흐름을 보고, 지금 가장 좋은 상태로 보낼 수 있는 과일을 중심으로 소개합니다.
+        </p>
+        <div class="pb-origin-note">
+          세척은 모든 과일에 같은 방식으로 적용하지 않습니다. 사과처럼 세척 상품으로 준비되는 품목은
+          세척과 개별 포장 과정을 강조하고, 복숭아나 자두처럼 예민한 과일은 선별과 완충 포장을 더 중요하게 봅니다.
+        </div>
+      </div>
+      <div class="pb-origin-photo-grid" aria-label="대표 과일 이미지">
+        <figure>
+          <img src="https://example.com/sample-asset" alt="접시에 담긴 황도 복숭아" />
+          <figcaption>제철 과일 선별</figcaption>
+        </figure>
+        <figure>
+          <img src="https://example.com/sample-asset" alt="개별 포장된 세척 사과와 신선한 사과" />
+          <figcaption>세척 사과 포장</figcaption>
+        </figure>
+        <figure>
+          <img src="https://example.com/sample-asset" alt="박스에 정돈된 샤인머스캣" />
+          <figcaption>선물용 포장</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="pb-origin-wrap pb-process" aria-labelledby="pb-process-title">
+      <div class="pb-section-head">
+        <h2 id="pb-process-title">산지에서 출고까지, 기본을 지키는 과정</h2>
+        <p>
+          화려한 말보다 중요한 것은 실제 과정입니다. 산지 확인, 수확 후 선별, 품목에 맞는 세척과 정돈,
+          그리고 흔들림을 줄이는 포장까지 순서대로 관리합니다.
+        </p>
+      </div>
+      <div class="pb-process-list">
+        <article class="pb-process-card">
+          <h3>산지 확인</h3>
+          <p>품목별 제철 산지와 수확 흐름을 확인해 지금 보내기 좋은 과일을 중심으로 준비합니다.</p>
+        </article>
+        <article class="pb-process-card">
+          <h3>상태 선별</h3>
+          <p>크기, 색, 무름, 흠집을 확인하고 상품성이 떨어지는 과일은 출고 전 한 번 더 제외합니다.</p>
+        </article>
+        <article class="pb-process-card">
+          <h3>품목별 정돈</h3>
+          <p>세척 상품은 깨끗하게 준비하고, 예민한 과일은 표면 손상을 줄이는 방식으로 다룹니다.</p>
+        </article>
+        <article class="pb-process-card">
+          <h3>꼼꼼한 포장</h3>
+          <p>이동 중 눌림과 흔들림을 줄일 수 있도록 완충재와 박스 상태를 확인해 출고합니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="pb-origin-wrap pb-product-proof">
+      <div class="pb-proof-copy">
+        <span class="pb-kicker">WHY IT MATTERS</span>
+        <h2>고객이 궁금해하는 건 결국 “믿고 받아도 되는가”입니다</h2>
+        <p>
+          산지 이야기는 감성만 보여주는 영역이 아닙니다. 어디서 오고, 어떤 기준으로 고르고,
+          어떻게 포장해 보내는지 알려줄 때 구매 전 불안이 줄어듭니다.
+        </p>
+        <div class="pb-proof-list">
+          <div>
+            <strong>ORIGIN</strong>
+            <span>“어디서 온 과일인가”를 먼저 보여줘 산지직송의 이유를 분명하게 만듭니다.</span>
+          </div>
+          <div>
+            <strong>SELECT</strong>
+            <span>“좋은 것만 골라 보내는가”에 답하기 위해 선별 기준을 짧고 구체적으로 설명합니다.</span>
+          </div>
+          <div>
+            <strong>DELIVER</strong>
+            <span>“배송 중 괜찮을까”라는 걱정을 줄이도록 포장과 출고 과정을 함께 보여줍니다.</span>
+          </div>
+        </div>
+      </div>
+      <div class="pb-proof-image">
+        <img src="https://example.com/sample-asset" alt="세척 후 개별 포장된 사과" />
+      </div>
+    </section>
+
+    <section class="pb-closing">
+      <div class="pb-closing-inner">
+        <a class="pb-closing-home" href="/">홈으로 가기</a>
+        <span class="pb-kicker">sample_store PROMISE</span>
+        <h2>산지의 신선함이 식탁까지 잘 닿도록, 한 박스마다 기본을 지키겠습니다</h2>
+        <p>
+          샘플상점은 과일을 더 크게 포장해 보이게 하기보다, 고객님이 받았을 때 납득할 수 있는 상태와
+          신뢰할 수 있는 과정을 먼저 생각합니다.
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

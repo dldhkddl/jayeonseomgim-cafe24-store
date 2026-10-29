@@ -1,0 +1,64 @@
+<!-- ##module_info #Layout #header #sample_store -->
+<link rel="stylesheet" href="https://example.com/sample-asset" />
+
+<header class="ns-site-header" id="header">
+  <div class="ns-header-inner">
+    <nav class="ns-header-nav" aria-label="주요 메뉴">
+      <a class="ns-brand-link" href="/shopinfo/company.html">브랜드</a>
+      <div class="ns-product-categories" module="Layout_category">
+        <!--@js(/js/module/layout/category.js)-->
+        <ul>
+          <li><a href="{$link_product_list}">{$name}</a></li>
+          <li><a href="{$link_product_list}">{$name}</a></li>
+        </ul>
+      </div>
+      <a href="/origin-story-sample.html">산지이야기</a>
+      <a href="/board/index.html">고객센터</a>
+    </nav>
+
+    <a class="ns-header-logo" href="/">
+      <img src="https://example.com/sample-asset" alt="샘플상점" />
+      <span>자연이 키우고, 정성을 담아 전합니다</span>
+    </a>
+
+    <div class="ns-header-actions">
+      <a class="ns-account" href="/member/login.html" module="Layout_statelogoff">로그인</a>
+      <a class="ns-account" href="/member/agreement.html" module="Layout_statelogoff">회원가입</a>
+      <a class="ns-account" href="{$action_logout}" module="Layout_stateLogon">로그아웃</a>
+      <a class="ns-account" href="/myshop/index.html">마이페이지</a>
+
+      <a class="ns-header-action ns-header-mobile eNavFold" href="javascript:;" role="button" aria-label="카테고리 열기">
+        <!--@import(/svg/ico_category.html)-->
+      </a>
+
+      <a class="ns-header-action eSearch" href="javascript:;" role="button">
+        <!--@import(/svg/ico_search.html)-->
+        <span class="ns-action-label">검색</span>
+      </a>
+
+      <span class="ns-divider" aria-hidden="true"></span>
+
+      <a class="ns-header-action" href="/order/basket.html" module="Layout_orderBasketcount">
+        <!--@import(/svg/ico_cart.html)-->
+        <span class="ns-action-label">장바구니</span>
+        <span class="count {$basket_count_display|display} {$basket_count_display_class}">
+          <span class="{$basket_count_class}">{$basket_count}</span>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div module="Layout_SearchHeader">
+  <!--@css(/css/module/layout/searchHeader.css)-->
+  <!--
+    $product_page=/product/detail.html
+    $category_page=/product/list.html
+  -->
+  <fieldset>
+    <legend>Search</legend>
+    {$form.keyword}
+    <span alt="Search" onclick="{$action_search_submit}"><!--@import(/svg/ico_search.html)--></span>
+    <ul class="autoDrop" id="{$search_auto_id}"></ul>
+  </fieldset>
+</div>

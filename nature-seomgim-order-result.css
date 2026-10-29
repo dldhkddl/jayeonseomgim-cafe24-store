@@ -1,0 +1,27 @@
+#userStyle #mCafe24Order .ec-base-button.gColumn .btnEm {
+  border: 1px solid #234837 !important;
+  background: #fff !important;
+  color: #234837 !important;
+  box-shadow: none !important;
+}
+
+#userStyle #mCafe24Order .ec-base-button.gColumn .btnSubmit {
+  border: 1px solid #234837 !important;
+  background: #234837 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+#userStyle #mCafe24Order .ec-base-button.gColumn .btnEm:hover,
+#userStyle #mCafe24Order .ec-base-button.gColumn .btnEm:focus-visible {
+  border-color: #1b392b !important;
+  background: #f7f3ec !important;
+  color: #1b392b !important;
+}
+
+#userStyle #mCafe24Order .ec-base-button.gColumn .btnSubmit:hover,
+#userStyle #mCafe24Order .ec-base-button.gColumn .btnSubmit:focus-visible {
+  border-color: #1b392b !important;
+  background: #1b392b !important;
+  color: #fff !important;
+}

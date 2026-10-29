@@ -1,0 +1,76 @@
+#userStyle #mCafe24Order #orderFixItem .btnSubmit {
+  border: 1px solid #234837 !important;
+  background: #234837 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+#userStyle #mCafe24Order #orderFixItem .btnSubmit:hover,
+#userStyle #mCafe24Order #orderFixItem .btnSubmit:focus-visible {
+  border-color: #1b392b !important;
+  background: #1b392b !important;
+  color: #fff !important;
+}
+
+#userStyle #mCafe24Order input[type="radio"],
+#userStyle #mCafe24Order input[type="checkbox"] {
+  accent-color: #234837 !important;
+}
+
+#userStyle #mCafe24Order input[type="radio"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 8px 0 0 !important;
+  border: 2px solid #cfcfcf !important;
+  border-radius: 50% !important;
+  background: #fff !important;
+  vertical-align: -5px !important;
+}
+
+#userStyle #mCafe24Order input[type="radio"]:checked {
+  border-color: #234837 !important;
+  background: radial-gradient(circle at center, #234837 0 5px, #fff 6px) !important;
+}
+
+#userStyle #mCafe24Order input[type="checkbox"] {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 20px !important;
+  height: 20px !important;
+  border: 1px solid #cfcfcf !important;
+  border-radius: 2px !important;
+  background: #fff !important;
+  vertical-align: -5px !important;
+}
+
+#userStyle #mCafe24Order input[type="checkbox"]:checked {
+  border-color: #234837 !important;
+  background:
+    linear-gradient(45deg, transparent 55%, #fff 55%) 4px 10px / 5px 9px no-repeat,
+    linear-gradient(-45deg, transparent 48%, #fff 48%) 8px 10px / 9px 5px no-repeat,
+    #234837 !important;
+}
+
+#userStyle #mCafe24Order input:focus,
+#userStyle #mCafe24Order select:focus,
+#userStyle #mCafe24Order textarea:focus {
+  border-color: #234837 !important;
+  outline-color: #234837 !important;
+}
+
+#userStyle #mCafe24Order .required,
+#userStyle #mCafe24Order .icoRequired,
+#userStyle #mCafe24Order .txtRequired,
+#userStyle #mCafe24Order .txtInfo.required,
+#userStyle #mCafe24Order label .required,
+#userStyle #mCafe24Order th .required,
+#userStyle #mCafe24Order .ec-base-table .required,
+#userStyle #mCafe24Order [style*="#006fff"],
+#userStyle #mCafe24Order [style*="#0066ff"],
+#userStyle #mCafe24Order [style*="#3971ff"],
+#userStyle #mCafe24Order [style*="rgb(0, 102, 255)"],
+#userStyle #mCafe24Order [style*="rgb(57, 113, 255)"] {
+  color: #234837 !important;
+}

@@ -1,0 +1,133 @@
+#footer.ns-site-footer {
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  background: #234837;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+#footer.ns-site-footer,
+#footer.ns-site-footer * {
+  box-sizing: border-box;
+}
+
+#footer.ns-site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#footer.ns-site-footer .ns-footer-shell {
+  display: block !important;
+  width: min(100% - 64px, 1420px) !important;
+  max-width: 1420px !important;
+  margin: 0 auto !important;
+  padding: 54px 0 46px !important;
+}
+
+#footer.ns-site-footer .ns-footer-top {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  padding-bottom: 28px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+#footer.ns-site-footer .ns-footer-brand strong {
+  display: block !important;
+  color: #fff !important;
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.2 !important;
+}
+
+#footer.ns-site-footer p {
+  margin: 8px 0 0;
+  color: #fff !important;
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+#footer.ns-site-footer .ns-footer-main {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.7fr) !important;
+  gap: 72px !important;
+  padding: 32px 0 30px !important;
+}
+
+#footer.ns-site-footer .ns-footer-company strong,
+#footer.ns-site-footer .ns-footer-info h2 {
+  display: block !important;
+  margin: 0 0 14px !important;
+  color: #fff !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+#footer.ns-site-footer .ns-footer-company span,
+#footer.ns-site-footer .ns-footer-info span {
+  color: #fff !important;
+}
+
+#footer.ns-site-footer .ns-footer-warehouses {
+  margin-top: 22px !important;
+}
+
+#footer.ns-site-footer .ns-footer-warehouses strong {
+  display: block !important;
+  margin: 0 0 8px !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+#footer.ns-site-footer .ns-footer-warehouses p {
+  margin-top: 4px !important;
+}
+
+#footer.ns-site-footer .ns-footer-info {
+  display: grid !important;
+  gap: 32px !important;
+  text-align: right !important;
+}
+
+#footer.ns-site-footer .ns-footer-contact {
+  display: block !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+}
+
+#footer.ns-site-footer .ns-footer-bottom {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: end !important;
+  gap: 24px !important;
+  color: #fff !important;
+}
+
+#footer.ns-site-footer .ns-footer-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0 18px !important;
+  color: #fff !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 960px) {
+  #footer.ns-site-footer .ns-footer-shell {
+    width: min(100% - 40px, 1420px) !important;
+    padding: 44px 0 40px !important;
+  }
+
+  #footer.ns-site-footer .ns-footer-main,
+  #footer.ns-site-footer .ns-footer-bottom {
+    grid-template-columns: 1fr !important;
+  }
+
+  #footer.ns-site-footer .ns-footer-info {
+    text-align: left !important;
+  }
+}
